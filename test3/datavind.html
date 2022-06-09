@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰뷰뷰뷰</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 함수를 사용할 때 넣어주는 값 = 인자(argument) -->
+     
+        {{person.name}} {{person.age}}{{getName(22)}}
+        <a :href="getYoutube('kossiecoder')">코지코더 채널</a>
+    
+        <!--  :는 v-bind:의 약자이다. getLink함수를 호출하여 인자로 파라미터에 kossiecoder를 넘기면
+        channel에 kossiecoder가 들어가 this.link(https://www.youtube.com/) + channel(kossiecoder)의 결과가 나온다-->
+    </div>
+        <script>
+            //뷰 인스턴스 생성
+            new Vue({
+                el: '#app',
+                data: {
+                    person:
+                    
+                    { name : "정요섭" ,age : 30},
+                    link: 'https://www.youtube.com/'
+                     },
+                methods: {
+                    getName(dd){
+                        return this.person.name +'22년뒤엔' + (this.person.age +dd) +'살'
+                    },
+                    getYoutube(ff){
+                        return this.link + ff;
+                    }
+                },
+            })
+        </script>
+    
+</body>
+</html>

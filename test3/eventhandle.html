@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰뷰뷰뷰</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+      <form @submit.prevent="submit">
+        <input type="text"><br>
+        <!-- 폼 태그는 서브밋을하면 리로드한다 -->
+        <!-- prevent를 통하여 기본으로 설정되어있는 클릭이벤트를 막을 수 있다. -->
+        <button type="submit">submit</button>
+      </form>
+
+     
+    </div>
+        <script>
+            //뷰 인스턴스 생성
+            new Vue({
+                el: '#app',
+                data: {
+                    year : 2018,
+                    
+                     },
+                methods: {
+                    alert(){
+                        alert('h2lloo');
+
+                    },
+                    plus(){
+                           (this.year++) ;
+                    },
+                    minus(dd){
+                            return this.year--;
+                    },
+                    submit() {
+                        alert('제출되었습니다.')
+                        console.log('찍혔냐');
+                    }
+                    
+                },
+            })
+        </script>
+    
+</body>
+</html>
